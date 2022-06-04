@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Muli', sans-serif;
+    background-image: url('https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80');
+}
+
+h1 {
+    margin: 50px 0 30px;
+    text-align: center;
+    color: cyan;
+    font-style: italic;
+    letter-spacing: 4px;
+    text-decoration: underline crimson;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.faq {
+    background-color: rgba(255, 255, 255, 0.2);
+    border: 1px solid black;
+    border-radius: 10px;
+    margin: 20px 0;
+    padding: 30px;
+    position: relative;
+    overflow: hidden;
+    transition: 0.3s ease;
+}
+
+.faq.active {
+    background-color: white;
+    box-shadow: 0 6px 8px cyan;
+}
+
+.faq.active::before,
+.faq.active::after {
+    content: '\f075';
+    font-family: 'Font Awesome 5 Free';
+    color: rgb(14, 121, 71);
+    font-size: 7rem;
+    position: absolute;
+    opacity: 0.3;
+    z-index: 0;
+    top: 20px;
+    left: 20px;
+}
+
+.faq.active::before {
+    color: rgb(35, 139, 165);
+    top: -10px;
+    left: -30px;
+    transform: rotateY(180deg);
+    border: none;
+    font-weight: 0;
+}
+
+.faq-title {
+    margin: 0 35px 0 0;
+}
+
+.faq-text {
+    display: none;
+    margin: 30px 0 0;
+}
+
+.faq.active .faq-text {
+    display: block;
+}
+
+.btn {
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    position: absolute;
+    padding: 0;
+    top: 30px;
+    right: 30px;
+    height: 30px;
+    width: 30px;
+}
+
+.btn:focus {
+    outline: 0;
+    transform: scale(0.9);
+    border: rgba(0, 0, 0, 0.404);
+}
+
+.btn .fa-times {
+    display: none;
+}
+
+.faq.active .btn .fa-times {
+    color: black;
+    display: block;
+    /* border: 10px solid rgba(0, 0, 0, 0.404); */
+    border-radius: 100%;
+}
+
+.faq.active .btn .fa-chevron-down {
+    display: none;
+}
+
+.faq.active .btn {
+    background-color: rgba(0, 162, 255, 0.2);
+    border-radius: 100%;
+}
